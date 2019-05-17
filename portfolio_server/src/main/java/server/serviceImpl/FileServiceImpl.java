@@ -1,4 +1,8 @@
 package server.serviceImpl;
 
-public class FileServiceImpl {
+import org.springframework.stereotype.Service;
+import server.service.FileService;
+
+@Service(value = "fileService")
+public class FileServiceImpl implements FileService {
 }
