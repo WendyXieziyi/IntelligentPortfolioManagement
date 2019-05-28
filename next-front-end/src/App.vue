@@ -12,6 +12,7 @@
                 to="/login"
                 >资产管理</router-link
               >
+<<<<<<< HEAD
 			  <router-link
                 class="header-link"
                 active-class="header-link--active"
@@ -19,6 +20,9 @@
                 >风险评测</router-link
               >
 			  <router-link
+=======
+              <router-link
+>>>>>>> 58a1b5a17d2f399fa5e74b59293b5aca182d9a6a
                 class="header-link"
                 active-class="header-link--active"
                 to="/course"
