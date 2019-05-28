@@ -1,38 +1,47 @@
 package server.serviceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import server.dao.UserDao;
-import server.daoImpl.UserDaoImpl;
+import server.dao.UserRepository;
+import server.entity.UserEntity;
 import server.service.UserService;
 import server.util.ResultMessage;
 
 @Service(value = "userService")
 public class UserServiceImpl implements UserService {
-    UserDao userDao = new UserDaoImpl();
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public ResultMessage login(String username, String password) {
-        String item = userDao.findUserByUsername(username);
-        if(item==null){
-            return ResultMessage.NOT_EXIST;
-        }
-        else if(item.split(",")[1].equals(password)){
+        UserEntity userEntity = userRepository.findByUsername(username);
+        if(userEntity!=null&&userEntity.getPassword().equals(password)){
             return ResultMessage.SUCCESS;
         }
-        else{
-            return ResultMessage.FAILED;
-        }
+        return ResultMessage.FAILED;
     }
 
     @Override
     public ResultMessage register(String username, String password) {
-        if(userDao.isUserExits(username)==ResultMessage.EXIST){
-            return ResultMessage.EXIST;
+        UserEntity userEntity = userRepository.findByUsername(username);
+        if(userEntity!=null){
+            return ResultMessage.FAILED;
         }
         else{
-            userDao.addUser(username,password);
-            userDao.createUserDir(username);
+            userEntity = new UserEntity();
+            userEntity.setUsername(username);
+            userEntity.setPassword(password);
+            userRepository.save(userEntity);
             return ResultMessage.SUCCESS;
         }
+    }
+
+    @Override
+    public int getUserIdByUsername(String username) {
+        UserEntity userEntity = userRepository.findByUsername(username);
+        if(userEntity!=null){
+            return userEntity.getId();
+        }
+        return -1;
     }
 }

@@ -18,4 +18,11 @@ public interface UserService {
      * @return
      */
     public ResultMessage register(String username,String password);
+
+    /**
+     * 根据用户名返回用户id
+     * @param username
+     * @return
+     */
+    public int getUserIdByUsername(String username);
 }

@@ -54,4 +54,15 @@ public class User {
             e.printStackTrace();
         }
     }
+
+    @RequestMapping(value = "/usernameToId",method = RequestMethod.GET)
+    public void usernameToId(@RequestParam String username, HttpServletRequest request, HttpServletResponse response){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("id",userService.getUserIdByUsername(username));
+        try (PrintWriter out = response.getWriter()){
+            out.println(jsonObject);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
