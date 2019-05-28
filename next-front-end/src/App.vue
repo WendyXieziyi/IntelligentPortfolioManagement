@@ -12,6 +12,12 @@
                 to="/login"
                 >资产管理</router-link
               >
+			  <router-link
+                class="header-link"
+                active-class="header-link--active"
+                to="/risk"
+                >风险评测</router-link
+              >
             </div>
           </div>
           <div class="header-content_right">
