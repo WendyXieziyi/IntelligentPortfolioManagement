@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "比特币BTC",
+        "location": "BTC简介"
+    },
+    {
+        "id": 2,
+        "name": "比原链BTM",
+        "location": "BTM简介"
+    },
+    {
+        "id": 3,
+        "name": "以太坊ETH",
+        "location": "ETH简介"
+    },
+    {
+        "id": 4,
+        "name": "LDS-ludos",
+        "location": "LDS简介"
+    },
+    {
+        "id": 5,
+        "name": "纳诺NANO",
+        "location": "NANO简介"
+    },
+    {
+        "id": 6,
+        "name": "TON币",
+        "location": "TON简介"
+    },
+    {
+        "id": 7,
+        "name": "莱特币LTC",
+        "location": "LTC简介"
+    }
+]
