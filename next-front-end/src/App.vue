@@ -18,6 +18,19 @@
                 to="/risk"
                 >风险评测</router-link
               >
+			  <router-link
+                class="header-link"
+                active-class="header-link--active"
+                to="/course"
+                >学习园地</router-link
+              >
+              <router-link
+                class="header-link"
+                active-class="header-link--active"
+                exact
+                to="/"
+                >首页</router-link
+              >
             </div>
           </div>
           <div class="header-content_right">
