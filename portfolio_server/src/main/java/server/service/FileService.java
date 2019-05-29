@@ -22,26 +22,17 @@ public interface FileService {
     public ResultMessage loadDataSet(String destinationPath);
 
     /**
-     * 拷贝python模型到任务目录
-     * @param sourcePath
+     * 拷贝Python模型文件夹
      * @param destinationPath
      * @return
-     * @throws IOException
      */
-    public ResultMessage copyDir(String sourcePath, String destinationPath) throws IOException;
+    public ResultMessage copyPGPortfolio(String destinationPath);
 
     /**
-     * 拷贝文件
-     * @param oldPath
-     * @param newPath
-     * @throws IOException
-     */
-    public void copyFile(String oldPath, String newPath) throws IOException;
-
-    /**
-     * 删除文件夹下所有文件
-     * @param path
+     * 设定net-config参数
+     * @param processId
      * @return
      */
-    public ResultMessage deleteFile(String path);
+    public ResultMessage setParameters(String processId);
+
 }

@@ -7,11 +7,12 @@ import java.util.Objects;
 @Table(name = "process", schema = "portfolio", catalog = "")
 public class ProcessEntity {
     private String id;
-    private Integer userId;
+    private int userId;
     private String startDate;
     private String endDate;
-    private Integer steps;
+    private int steps;
     private String processName;
+    private double status;
 
     @Id
     @Column(name = "id")
@@ -25,11 +26,11 @@ public class ProcessEntity {
 
     @Basic
     @Column(name = "user_id")
-    public Integer getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -55,11 +56,11 @@ public class ProcessEntity {
 
     @Basic
     @Column(name = "steps")
-    public Integer getSteps() {
+    public int getSteps() {
         return steps;
     }
 
-    public void setSteps(Integer steps) {
+    public void setSteps(int steps) {
         this.steps = steps;
     }
 
@@ -73,21 +74,32 @@ public class ProcessEntity {
         this.processName = processName;
     }
 
+    @Basic
+    @Column(name = "status")
+    public double getStatus() {
+        return status;
+    }
+
+    public void setStatus(double status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProcessEntity that = (ProcessEntity) o;
-        return id == that.id &&
-                Objects.equals(userId, that.userId) &&
+        return userId == that.userId &&
+                steps == that.steps &&
+                Objects.equals(id, that.id) &&
                 Objects.equals(startDate, that.startDate) &&
                 Objects.equals(endDate, that.endDate) &&
-                Objects.equals(steps, that.steps) &&
-                Objects.equals(processName, that.processName);
+                Objects.equals(processName, that.processName) &&
+                Objects.equals(status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userId, startDate, endDate, steps, processName);
+        return Objects.hash(id, userId, startDate, endDate, steps, processName, status);
     }
 }
