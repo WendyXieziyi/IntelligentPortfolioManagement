@@ -1,0 +1,13 @@
+学习园地
+
+一、必修
+入市手册（深交所pdf下载）
+风险教育（深交所网站http://investor.szse.cn/warning/activities/risk/index.html（明规则，识风险） md格式）
+
+二、选修
+股票期权专题（列表形式： 课程名称 | 级别 | 课程下载（pdf链接））
+证券专题（投资者中国证券协会http://www.sac.net.cn/tzzyd/zqex/cnp/1j/ 复制文本 （改成md格式））
+虚拟货币专题（自己找 改成md格式）
+
+三、模拟交易
+给链接跳转http://nrng.gtja.com/nrngWeb/resources/nrng/sjMockIndex.html

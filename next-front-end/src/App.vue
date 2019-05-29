@@ -9,31 +9,34 @@
               <router-link
                 class="header-link"
                 active-class="header-link--active"
+                exact
+                to="/"
+                >首页</router-link
+              >
+              <router-link
+                class="header-link"
+                active-class="header-link--active"
                 to="/login"
                 >资产管理</router-link
               >
-<<<<<<< HEAD
-			  <router-link
-                class="header-link"
-                active-class="header-link--active"
-                to="/risk"
-                >风险评测</router-link
-              >
-			  <router-link
-=======
               <router-link
->>>>>>> 58a1b5a17d2f399fa5e74b59293b5aca182d9a6a
                 class="header-link"
                 active-class="header-link--active"
                 to="/course"
                 >学习园地</router-link
               >
+              <router-link class="header-link" to="/risk">风险评测</router-link>
+              <!--<router-link
+                class="header-link"
+                active-class="header-link--active"
+                to="/aboutus"
+                >关于我们</router-link
+              >-->
               <router-link
                 class="header-link"
                 active-class="header-link--active"
-                exact
-                to="/"
-                >首页</router-link
+                to="/about"
+                >关于我们</router-link
               >
             </div>
           </div>

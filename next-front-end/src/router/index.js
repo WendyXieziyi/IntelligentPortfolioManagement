@@ -6,7 +6,8 @@ import News from "@/views/News";
 import Course from "@/views/Course";
 import RiskAnalysis from "@/views/RiskAnalysis";
 import AnalysisResult from "@/views/AnalysisResult";
-
+import Aboutus from "@/views/Aboutus";
+import About from "@/views/About";
 Vue.use(Router);
 
 export default new Router({
@@ -67,6 +68,43 @@ export default new Router({
       path: "/workspace/:username",
       name: "Workspace",
       component: Workspace
-    }
+    },
+    {
+      path: "/aboutus",
+      name: "Aboutus",
+      component: Aboutus
+    },
+    {
+      path: "/about",
+      name: "About",
+      component: About,
+      children: [
+        {
+          path: "project-background",
+          name: "ProjectBackground",
+          component: () => import("@/views/about/ProjectBackground.vue")
+        },
+        {
+          path: "project-significance",
+          name: "ProjectBackground",
+          component: () => import("@/views/about/ProjectSignificance.vue")
+        },
+        {
+          path: "software-architecture",
+          name: "SoftwareArchitecture",
+          component: () => import("@/views/about/SoftwareArchitecture.vue")
+        },
+        {
+          path: "function-introduction",
+          name: "FunctionIntroduction",
+          component: () => import("@/views/about/FunctionIntroduction.vue")
+        },
+        {
+          path: "contact-us",
+          name: "ContactUs",
+          component: () => import("@/views/about/ContactUs.vue")
+        }
+      ]
+    },
   ]
 });
