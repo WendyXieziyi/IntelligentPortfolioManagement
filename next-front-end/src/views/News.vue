@@ -7,7 +7,7 @@
         <div class="new-list_item" v-for="item in news" :key="item.img">
           <img :src="item.img" alt="" />
           <div class="new-list_right">
-            <div>{{ item.title }}</div>
+            <a :href="item.href">{{ item.title }}</a>
             <div class="new-list_time">{{ item.time }}</div>
           </div>
         </div>
