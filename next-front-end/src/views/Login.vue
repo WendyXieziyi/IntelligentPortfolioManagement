@@ -1,27 +1,29 @@
 <template>
-  <div class="login">
-    <h1>Portfolio</h1>
-    <span>基于深度强化学习构建投资组合的动态管理系统</span>
-    <div class="formWrapper">
-      <el-form id="form" label-width="80px">
-        <el-form-item label="用户名">
-          <el-input v-model="user.username"></el-input>
-        </el-form-item>
-        <el-form-item label="密码">
-          <el-input v-model="user.password" type="password"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <span style="font-size: 10px; "
-            >*已注册请点击登录，注册将自动创建新账户</span
-          >
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="login">登录</el-button>
-          <el-button @click="register">注册</el-button>
-        </el-form-item>
-      </el-form>
+  <el-main>
+    <div class="login">
+      <h1>Portfolio</h1>
+      <span>基于深度强化学习构建投资组合的动态管理系统</span>
+      <div class="formWrapper">
+        <el-form id="form" label-width="80px">
+          <el-form-item label="用户名">
+            <el-input v-model="user.username"></el-input>
+          </el-form-item>
+          <el-form-item label="密码">
+            <el-input v-model="user.password" type="password"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <span style="font-size: 10px; "
+              >*已注册请点击登录，注册将自动创建新账户</span
+            >
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="login">登录</el-button>
+            <el-button @click="register">注册</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
     </div>
-  </div>
+  </el-main>
 </template>
 
 <script>
@@ -42,7 +44,6 @@ export default {
       var _this = this;
       var username = this.user.username;
       var password = this.user.password;
-
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
@@ -155,5 +156,8 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.el-main {
+  background-image: url("../assets/bg.png");
 }
 </style>

@@ -4,7 +4,8 @@
       <el-header class="header">
         <div class="header-content">
           <div class="header-content_left">
-            <div class="header-logo">Portfolio</div>
+            <img src="./assets/logo.png" style="width: 50px;height: 50px" />
+            <div class="header-logo">--- Portfolio ---</div>
             <div>
               <router-link
                 class="header-link"
@@ -25,7 +26,12 @@
                 to="/course"
                 >学习园地</router-link
               >
-              <router-link class="header-link" to="/risk">风险评测</router-link>
+              <router-link
+                class="header-link"
+                active-class="header-link--active"
+                to="/risk"
+                >风险评测</router-link
+              >
               <!--<router-link
                 class="header-link"
                 active-class="header-link--active"
@@ -40,12 +46,21 @@
               >
             </div>
           </div>
+          <!--
           <div class="header-content_right">
             <router-link
               class="header-link"
               active-class="header-link--active"
               to="/login"
               >登陆/注册</router-link
+            >
+          </div>-->
+          <div class="header-content_right">
+            <router-link
+              class="header-link"
+              active-class="header-link--active"
+              to="/login"
+              >{{ setUser }}</router-link
             >
           </div>
         </div>
@@ -59,7 +74,34 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  /*data: function() {
+    console.log(localStorage.getItem("username"));
+    if (
+      localStorage.getItem("username") === "" ||
+      localStorage.getItem("username") === "undefined" ||
+      localStorage.getItem("showName") === "false"
+    ) {
+      return {
+        setUser: "登录/注册"
+      };
+    } else {
+      return { setUser: localStorage.getItem("username") };
+    }
+  }*/
+  computed: {
+    setUser: function() {
+      console.log(localStorage.getItem("username"));
+      if (
+        localStorage.getItem("username") === "" ||
+        localStorage.getItem("username") === "undefined"
+      ) {
+        return "登录/注册";
+      } else {
+        return localStorage.getItem("username");
+      }
+    }
+  }
 };
 </script>
 
@@ -109,7 +151,7 @@ export default {
 }
 
 .header-link--active {
-  color: red;
+  color: #ffdf7a;
 }
 
 .content p {
